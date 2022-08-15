@@ -59,42 +59,46 @@ function wpp() {
     let selecionarComida = document
       .querySelector(".pratos")
       .querySelector(".selecionado")
-      .querySelector("preco").innerHTML;
+      .querySelector(".preco").innerHTML;
     let selecionarBebida = document
       .querySelector(".bebidas")
       .querySelector(".selecionado")
-      .querySelector("preco").innerHTML;
+      .querySelector(".preco").innerHTML;
     let selecionarSobremesa = document
       .querySelector(".sobremesas")
       .querySelector(".selecionado")
-      .querySelector("preco").innerHTML;
+      .querySelector(".preco").innerHTML;
 
     comida = document
       .querySelector(".pratos")
       .querySelector(".selecionado")
-      .querySelector("nome-alimento").innerHTML;
+      .querySelector(".nome-alimento").innerHTML;
     bebida = document
       .querySelector(".bebidas")
       .querySelector(".selecionado")
-      .querySelector("nome-alimento").innerHTML;
+      .querySelector(".nome-alimento").innerHTML;
     sobremesa = document
       .querySelector(".sobremesas")
       .querySelector(".selecionado")
-      .querySelector("nome-alimento").innerHTML;
+      .querySelector(".nome-alimento").innerHTML;
 
-      let precoComida = Number(selecionarComida.replace(",", ".").replace("R$", ""));
-    let precoBebida = Number(selecionarBebida.replace(",", ".").replace("R$", ""));
-    let precoSobremesa = Number(selecionarSobremesa.replace(",", ".").replace("R$", ""));
-    
+    let precoComida = Number(
+      selecionarComida.replace(",", ".").replace("R$", "")
+    );
+    let precoBebida = Number(
+      selecionarBebida.replace(",", ".").replace("R$", "")
+    );
+    let precoSobremesa = Number(
+      selecionarSobremesa.replace(",", ".").replace("R$", "")
+    );
+
     let precoTotal = precoComida + precoBebida + precoSobremesa;
-
-    
 
     let textMessage = `Olá, gostaria de fazer o pedido: \n- Prato: ${comida}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${precoTotal.toFixed(
       2
     )}\n`;
     let params = encodeURIComponent(textMessage);
-    let numRest=55989898989;
+    let numRest = 55989898989;
     url = `https://wa.me/${numRest}?text=${params}`;
   }
 }
