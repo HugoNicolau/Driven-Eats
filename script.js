@@ -100,5 +100,7 @@ function wpp() {
     let params = encodeURIComponent(textMessage);
     let numRest = 55989898989;
     url = `https://wa.me/${numRest}?text=${params}`;
+
+    window.location.assign(url);
   }
 }
